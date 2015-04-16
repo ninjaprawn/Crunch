@@ -10,6 +10,8 @@ import UIKit
 
 class CNNavigationController: UINavigationController {
     
+    var sidebarView = CNSideBarView(frame: CGRectMake(0, -20, UIScreen.mainScreen().bounds.size.width, UIScreen.mainScreen().bounds.size.height))
+    
     func imageResize (#image:UIImage, sizeChange:CGSize)-> UIImage{
         
         let hasAlpha = true
@@ -56,6 +58,12 @@ class CNNavigationController: UINavigationController {
         menuButton.addTarget(self, action: Selector("menuReleased:"), forControlEvents: UIControlEvents.TouchUpOutside)
         self.navigationBar.addSubview(menuButton)
         
+        sidebarView.hidden = true
+        sidebarView.layer.shadowColor = UIColor.blackColor().CGColor
+        sidebarView.layer.shadowOffset = CGSize(width: 3, height: 0)
+        sidebarView.layer.shadowOpacity = 0.16
+        sidebarView.layer.shadowRadius = 3
+        
         self.navigationBar.barTintColor = UIColor(hex: 0x4CAF50)
     }
     
@@ -68,9 +76,12 @@ class CNNavigationController: UINavigationController {
     
     func menuReleased(sender:UIButton!) {
         UIView.animateWithDuration(0.1, animations: {
-            sender.backgroundColor = UIColor(hex: 0x4CAF50)
+            sender.backgroundColor = UIColor(hex: 0x4CAF50)            
+            self.navigationBar.addSubview(self.sidebarView)
         }, completion: { (succ) in
             sender.layer.cornerRadius = 0.0
+            self.sidebarView.hidden = false
+            self.sidebarView.showAnimated()
         })
     }
     
