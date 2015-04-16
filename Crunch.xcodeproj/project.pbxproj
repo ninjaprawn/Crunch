@@ -9,6 +9,11 @@
 /* Begin PBXBuildFile section */
 		51A363FC1ADCA84800C119BC /* CNSideBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51A363FB1ADCA84800C119BC /* CNSideBarView.swift */; };
 		51A363FF1ADCA8A200C119BC /* UIColor+Hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51A363FE1ADCA8A200C119BC /* UIColor+Hex.swift */; };
+		51A63F2E1AE0652D004B7F5A /* NSDate+dateFromInternetDateTimeString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51A63F291AE0652D004B7F5A /* NSDate+dateFromInternetDateTimeString.swift */; };
+		51A63F2F1AE0652D004B7F5A /* RSSFeed.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51A63F2A1AE0652D004B7F5A /* RSSFeed.swift */; };
+		51A63F301AE0652D004B7F5A /* RSSItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51A63F2B1AE0652D004B7F5A /* RSSItem.swift */; };
+		51A63F311AE0652D004B7F5A /* RSSParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51A63F2C1AE0652D004B7F5A /* RSSParser.swift */; };
+		51A63F321AE0652D004B7F5A /* String+imageLinksFromHTML.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51A63F2D1AE0652D004B7F5A /* String+imageLinksFromHTML.swift */; };
 		51C7457B1ADB74EE00A1AD63 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 51EE20641ADB74240055E322 /* Main.storyboard */; };
 		51C745801ADB75CE00A1AD63 /* CNNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51C7457F1ADB75CE00A1AD63 /* CNNavigationController.swift */; };
 		51C745841ADB84AC00A1AD63 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 51EE20691ADB74250055E322 /* LaunchScreen.xib */; };
@@ -36,6 +41,11 @@
 /* Begin PBXFileReference section */
 		51A363FB1ADCA84800C119BC /* CNSideBarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CNSideBarView.swift; sourceTree = "<group>"; };
 		51A363FE1ADCA8A200C119BC /* UIColor+Hex.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Hex.swift"; sourceTree = "<group>"; };
+		51A63F291AE0652D004B7F5A /* NSDate+dateFromInternetDateTimeString.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSDate+dateFromInternetDateTimeString.swift"; sourceTree = "<group>"; };
+		51A63F2A1AE0652D004B7F5A /* RSSFeed.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RSSFeed.swift; sourceTree = "<group>"; };
+		51A63F2B1AE0652D004B7F5A /* RSSItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RSSItem.swift; sourceTree = "<group>"; };
+		51A63F2C1AE0652D004B7F5A /* RSSParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RSSParser.swift; sourceTree = "<group>"; };
+		51A63F2D1AE0652D004B7F5A /* String+imageLinksFromHTML.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+imageLinksFromHTML.swift"; sourceTree = "<group>"; };
 		51C7457E1ADB751300A1AD63 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
 		51C7457F1ADB75CE00A1AD63 /* CNNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CNNavigationController.swift; sourceTree = "<group>"; };
 		51C745811ADB819A00A1AD63 /* Roboto-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Bold.ttf"; sourceTree = "<group>"; };
@@ -84,6 +94,18 @@
 			name = Fonts;
 			sourceTree = "<group>";
 		};
+		51A63F281AE0652D004B7F5A /* SwiftRSS */ = {
+			isa = PBXGroup;
+			children = (
+				51A63F291AE0652D004B7F5A /* NSDate+dateFromInternetDateTimeString.swift */,
+				51A63F2A1AE0652D004B7F5A /* RSSFeed.swift */,
+				51A63F2B1AE0652D004B7F5A /* RSSItem.swift */,
+				51A63F2C1AE0652D004B7F5A /* RSSParser.swift */,
+				51A63F2D1AE0652D004B7F5A /* String+imageLinksFromHTML.swift */,
+			);
+			path = SwiftRSS;
+			sourceTree = "<group>";
+		};
 		51EE20521ADB74240055E322 = {
 			isa = PBXGroup;
 			children = (
@@ -105,6 +127,7 @@
 		51EE205D1ADB74240055E322 /* Crunch */ = {
 			isa = PBXGroup;
 			children = (
+				51A63F281AE0652D004B7F5A /* SwiftRSS */,
 				51EE20601ADB74240055E322 /* AppDelegate.swift */,
 				51C7458A1ADB8A5D00A1AD63 /* asu_pid.entitlements */,
 				51C7457F1ADB75CE00A1AD63 /* CNNavigationController.swift */,
@@ -268,10 +291,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				51A363FC1ADCA84800C119BC /* CNSideBarView.swift in Sources */,
+				51A63F311AE0652D004B7F5A /* RSSParser.swift in Sources */,
+				51A63F2E1AE0652D004B7F5A /* NSDate+dateFromInternetDateTimeString.swift in Sources */,
 				51C745801ADB75CE00A1AD63 /* CNNavigationController.swift in Sources */,
 				51EE20631ADB74240055E322 /* ViewController.swift in Sources */,
+				51A63F2F1AE0652D004B7F5A /* RSSFeed.swift in Sources */,
 				51EE20611ADB74240055E322 /* AppDelegate.swift in Sources */,
+				51A63F321AE0652D004B7F5A /* String+imageLinksFromHTML.swift in Sources */,
 				51A363FF1ADCA8A200C119BC /* UIColor+Hex.swift in Sources */,
+				51A63F301AE0652D004B7F5A /* RSSItem.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
