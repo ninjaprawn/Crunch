@@ -31,12 +31,12 @@ class CNNavigationController: UINavigationController {
         statusBG.backgroundColor = UIColor(hex: 0x2E7D32)
         self.navigationBar.addSubview(statusBG)
         
-        var extended = UIView(frame: CGRectMake(0, self.navigationBar.frame.size.height, self.navigationBar.frame.size.width, 12))
+        var extended = UIView(frame: CGRectMake(0, 0, self.navigationBar.frame.size.width, self.navigationBar.frame.size.height+12))
         extended.backgroundColor = UIColor(hex: 0x4CAF50)
-        /*extended.layer.shadowColor = UIColor.blackColor().CGColor
-        extended.layer.shadowOffset = CGSize(width: 0, height: 7)
+        extended.layer.shadowColor = UIColor.blackColor().CGColor
+        extended.layer.shadowOffset = CGSize(width: 0, height: 3)
         extended.layer.shadowOpacity = 0.16
-        extended.layer.shadowRadius = 3*/
+        extended.layer.shadowRadius = 2
         self.navigationBar.addSubview(extended)
         
         var label = UILabel(frame: CGRectMake(72, ((self.navigationBar.frame.size.height+12)/2)-15, self.navigationBar.frame.size.width, 30))
@@ -80,6 +80,7 @@ class CNNavigationController: UINavigationController {
             self.navigationBar.addSubview(self.sidebarView)
         }, completion: { (succ) in
             sender.layer.cornerRadius = 0.0
+            self.sidebarView.windowLevel = UIWindowLevelStatusBar+1
             self.sidebarView.hidden = false
             self.sidebarView.showAnimated()
         })
