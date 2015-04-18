@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5191A5F81AE09DD300665118 /* CNWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5191A5F71AE09DD300665118 /* CNWebViewController.swift */; };
+		5191A5FA1AE0D76B00665118 /* CNLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5191A5F91AE0D76B00665118 /* CNLabel.swift */; };
+		51939BE21AE0724F00E0060C /* SOLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51939BE11AE0724F00E0060C /* SOLabel.swift */; };
+		51939BE51AE081DD00E0060C /* CNFeedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51939BE31AE081DD00E0060C /* CNFeedTableViewCell.swift */; };
+		51939BE61AE081DD00E0060C /* CNFeedTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 51939BE41AE081DD00E0060C /* CNFeedTableViewCell.xib */; };
 		51A363FC1ADCA84800C119BC /* CNSideBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51A363FB1ADCA84800C119BC /* CNSideBarView.swift */; };
 		51A363FF1ADCA8A200C119BC /* UIColor+Hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51A363FE1ADCA8A200C119BC /* UIColor+Hex.swift */; };
 		51A63F2E1AE0652D004B7F5A /* NSDate+dateFromInternetDateTimeString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51A63F291AE0652D004B7F5A /* NSDate+dateFromInternetDateTimeString.swift */; };
@@ -14,6 +19,7 @@
 		51A63F301AE0652D004B7F5A /* RSSItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51A63F2B1AE0652D004B7F5A /* RSSItem.swift */; };
 		51A63F311AE0652D004B7F5A /* RSSParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51A63F2C1AE0652D004B7F5A /* RSSParser.swift */; };
 		51A63F321AE0652D004B7F5A /* String+imageLinksFromHTML.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51A63F2D1AE0652D004B7F5A /* String+imageLinksFromHTML.swift */; };
+		51A63F351AE06794004B7F5A /* CNHomeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51A63F341AE06794004B7F5A /* CNHomeTableViewController.swift */; };
 		51C7457B1ADB74EE00A1AD63 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 51EE20641ADB74240055E322 /* Main.storyboard */; };
 		51C745801ADB75CE00A1AD63 /* CNNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51C7457F1ADB75CE00A1AD63 /* CNNavigationController.swift */; };
 		51C745841ADB84AC00A1AD63 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 51EE20691ADB74250055E322 /* LaunchScreen.xib */; };
@@ -22,8 +28,9 @@
 		51C745871ADB84B100A1AD63 /* Roboto-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 51C745831ADB819A00A1AD63 /* Roboto-Regular.ttf */; };
 		51C745891ADB850B00A1AD63 /* Roboto-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 51C745881ADB850500A1AD63 /* Roboto-Medium.ttf */; };
 		51C7458B1ADB8A5D00A1AD63 /* asu_pid.entitlements in Resources */ = {isa = PBXBuildFile; fileRef = 51C7458A1ADB8A5D00A1AD63 /* asu_pid.entitlements */; };
+		51E205A31AE1D64E006708D9 /* CNAddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51E205A21AE1D64E006708D9 /* CNAddViewController.swift */; };
+		51E205A51AE1D963006708D9 /* CNTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51E205A41AE1D963006708D9 /* CNTextField.swift */; };
 		51EE20611ADB74240055E322 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51EE20601ADB74240055E322 /* AppDelegate.swift */; };
-		51EE20631ADB74240055E322 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51EE20621ADB74240055E322 /* ViewController.swift */; };
 		51EE20681ADB74250055E322 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 51EE20671ADB74250055E322 /* Images.xcassets */; };
 		51EE20771ADB74250055E322 /* CrunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51EE20761ADB74250055E322 /* CrunchTests.swift */; };
 /* End PBXBuildFile section */
@@ -39,6 +46,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5191A5F71AE09DD300665118 /* CNWebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CNWebViewController.swift; sourceTree = "<group>"; };
+		5191A5F91AE0D76B00665118 /* CNLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CNLabel.swift; sourceTree = "<group>"; };
+		51939BE11AE0724F00E0060C /* SOLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SOLabel.swift; sourceTree = "<group>"; };
+		51939BE31AE081DD00E0060C /* CNFeedTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CNFeedTableViewCell.swift; sourceTree = "<group>"; };
+		51939BE41AE081DD00E0060C /* CNFeedTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CNFeedTableViewCell.xib; sourceTree = "<group>"; };
 		51A363FB1ADCA84800C119BC /* CNSideBarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CNSideBarView.swift; sourceTree = "<group>"; };
 		51A363FE1ADCA8A200C119BC /* UIColor+Hex.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Hex.swift"; sourceTree = "<group>"; };
 		51A63F291AE0652D004B7F5A /* NSDate+dateFromInternetDateTimeString.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSDate+dateFromInternetDateTimeString.swift"; sourceTree = "<group>"; };
@@ -46,6 +58,7 @@
 		51A63F2B1AE0652D004B7F5A /* RSSItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RSSItem.swift; sourceTree = "<group>"; };
 		51A63F2C1AE0652D004B7F5A /* RSSParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RSSParser.swift; sourceTree = "<group>"; };
 		51A63F2D1AE0652D004B7F5A /* String+imageLinksFromHTML.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+imageLinksFromHTML.swift"; sourceTree = "<group>"; };
+		51A63F341AE06794004B7F5A /* CNHomeTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CNHomeTableViewController.swift; sourceTree = "<group>"; };
 		51C7457E1ADB751300A1AD63 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
 		51C7457F1ADB75CE00A1AD63 /* CNNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CNNavigationController.swift; sourceTree = "<group>"; };
 		51C745811ADB819A00A1AD63 /* Roboto-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Bold.ttf"; sourceTree = "<group>"; };
@@ -53,10 +66,11 @@
 		51C745831ADB819A00A1AD63 /* Roboto-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Regular.ttf"; sourceTree = "<group>"; };
 		51C745881ADB850500A1AD63 /* Roboto-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Medium.ttf"; sourceTree = "<group>"; };
 		51C7458A1ADB8A5D00A1AD63 /* asu_pid.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = asu_pid.entitlements; sourceTree = "<group>"; };
+		51E205A21AE1D64E006708D9 /* CNAddViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CNAddViewController.swift; sourceTree = "<group>"; };
+		51E205A41AE1D963006708D9 /* CNTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CNTextField.swift; sourceTree = "<group>"; };
 		51EE205B1ADB74240055E322 /* Crunch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Crunch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		51EE205F1ADB74240055E322 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		51EE20601ADB74240055E322 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		51EE20621ADB74240055E322 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		51EE20651ADB74240055E322 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		51EE20671ADB74250055E322 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		51EE206A1ADB74250055E322 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
@@ -110,8 +124,8 @@
 			isa = PBXGroup;
 			children = (
 				51EE205D1ADB74240055E322 /* Crunch */,
-				51EE20731ADB74250055E322 /* CrunchTests */,
 				51EE205C1ADB74240055E322 /* Products */,
+				51EE20731ADB74250055E322 /* CrunchTests */,
 			);
 			sourceTree = "<group>";
 		};
@@ -127,18 +141,25 @@
 		51EE205D1ADB74240055E322 /* Crunch */ = {
 			isa = PBXGroup;
 			children = (
-				51A63F281AE0652D004B7F5A /* SwiftRSS */,
 				51EE20601ADB74240055E322 /* AppDelegate.swift */,
 				51C7458A1ADB8A5D00A1AD63 /* asu_pid.entitlements */,
+				51E205A21AE1D64E006708D9 /* CNAddViewController.swift */,
+				51939BE31AE081DD00E0060C /* CNFeedTableViewCell.swift */,
+				51939BE41AE081DD00E0060C /* CNFeedTableViewCell.xib */,
+				51A63F341AE06794004B7F5A /* CNHomeTableViewController.swift */,
+				5191A5F91AE0D76B00665118 /* CNLabel.swift */,
 				51C7457F1ADB75CE00A1AD63 /* CNNavigationController.swift */,
 				51A363FB1ADCA84800C119BC /* CNSideBarView.swift */,
+				51E205A41AE1D963006708D9 /* CNTextField.swift */,
+				5191A5F71AE09DD300665118 /* CNWebViewController.swift */,
 				51A363FD1ADCA85A00C119BC /* Fonts */,
 				51EE20671ADB74250055E322 /* Images.xcassets */,
 				51EE20691ADB74250055E322 /* LaunchScreen.xib */,
 				51EE20641ADB74240055E322 /* Main.storyboard */,
+				51939BE11AE0724F00E0060C /* SOLabel.swift */,
 				51EE205E1ADB74240055E322 /* Supporting Files */,
+				51A63F281AE0652D004B7F5A /* SwiftRSS */,
 				51A363FE1ADCA8A200C119BC /* UIColor+Hex.swift */,
-				51EE20621ADB74240055E322 /* ViewController.swift */,
 			);
 			path = Crunch;
 			sourceTree = "<group>";
@@ -158,7 +179,7 @@
 				51EE20741ADB74250055E322 /* Supporting Files */,
 			);
 			path = CrunchTests;
-			sourceTree = "<group>";
+			sourceTree = SOURCE_ROOT;
 		};
 		51EE20741ADB74250055E322 /* Supporting Files */ = {
 			isa = PBXGroup;
@@ -250,6 +271,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				51C745891ADB850B00A1AD63 /* Roboto-Medium.ttf in Resources */,
+				51939BE61AE081DD00E0060C /* CNFeedTableViewCell.xib in Resources */,
 				51C745851ADB84B100A1AD63 /* Roboto-Bold.ttf in Resources */,
 				51C745861ADB84B100A1AD63 /* Roboto-Light.ttf in Resources */,
 				51C7458B1ADB8A5D00A1AD63 /* asu_pid.entitlements in Resources */,
@@ -290,15 +312,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5191A5F81AE09DD300665118 /* CNWebViewController.swift in Sources */,
 				51A363FC1ADCA84800C119BC /* CNSideBarView.swift in Sources */,
 				51A63F311AE0652D004B7F5A /* RSSParser.swift in Sources */,
 				51A63F2E1AE0652D004B7F5A /* NSDate+dateFromInternetDateTimeString.swift in Sources */,
 				51C745801ADB75CE00A1AD63 /* CNNavigationController.swift in Sources */,
-				51EE20631ADB74240055E322 /* ViewController.swift in Sources */,
 				51A63F2F1AE0652D004B7F5A /* RSSFeed.swift in Sources */,
+				51E205A51AE1D963006708D9 /* CNTextField.swift in Sources */,
+				51939BE21AE0724F00E0060C /* SOLabel.swift in Sources */,
+				51E205A31AE1D64E006708D9 /* CNAddViewController.swift in Sources */,
 				51EE20611ADB74240055E322 /* AppDelegate.swift in Sources */,
+				51A63F351AE06794004B7F5A /* CNHomeTableViewController.swift in Sources */,
+				5191A5FA1AE0D76B00665118 /* CNLabel.swift in Sources */,
 				51A63F321AE0652D004B7F5A /* String+imageLinksFromHTML.swift in Sources */,
 				51A363FF1ADCA8A200C119BC /* UIColor+Hex.swift in Sources */,
+				51939BE51AE081DD00E0060C /* CNFeedTableViewCell.swift in Sources */,
 				51A63F301AE0652D004B7F5A /* RSSItem.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

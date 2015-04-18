@@ -13,9 +13,23 @@ class CNSideBarView: UIWindow, UIGestureRecognizerDelegate {
     var headerView: UIView = UIView()
     var contentView: UIView = UIView()
     var shadowButton: UIButton = UIButton()
+    var navBar: UINavigationController = UINavigationController()
+    var selected = 0
 
     required init(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
+    }
+    
+    func imageResize (#image:UIImage, sizeChange:CGSize)-> UIImage{
+        
+        let hasAlpha = true
+        let scale: CGFloat = UIScreen.mainScreen().scale // Use scale factor of main screen
+        
+        UIGraphicsBeginImageContextWithOptions(sizeChange, !hasAlpha, scale)
+        image.drawInRect(CGRect(origin: CGPointZero, size: sizeChange))
+        
+        let scaledImage = UIGraphicsGetImageFromCurrentImageContext()
+        return scaledImage
     }
     
     override init(frame: CGRect) {
@@ -32,9 +46,18 @@ class CNSideBarView: UIWindow, UIGestureRecognizerDelegate {
         headerView.backgroundColor = UIColor(hex: 0x4CAF50)
         self.addSubview(headerView)
         
+        var label = UILabel(frame: CGRectMake(16, ((96)/2)-15, frame.size.width, 30))
+        label.font = UIFont(name: "Roboto-Medium", size: 20)
+        label.textColor = UIColor.whiteColor()
+        label.text = "Crunch"
+        headerView.addSubview(label)
+
+        
         contentView = UIView(frame: CGRectMake(-((frame.size.width/5)*4), 76, (frame.size.width/5)*4, frame.size.height-76))
         contentView.backgroundColor = UIColor.whiteColor()
         self.addSubview(contentView)
+        
+        self.addItems()
     }
     
     func shadowTapped() {
@@ -54,5 +77,79 @@ class CNSideBarView: UIWindow, UIGestureRecognizerDelegate {
             self.contentView.frame.origin.x = 0
         })
         self.userInteractionEnabled = true
+    }
+    
+    func addItems() {
+        var items = ["Home", "Subscribe", "Subscriptions", "Favourites"]
+        var cy: CGFloat = 8.0
+        var count = 0
+        for item in items {
+            
+            var button = UIButton(frame: CGRectMake(0, cy, ((self.frame.size.width/5)*4), 48))
+            button.tag = count
+            button.addTarget(self, action: Selector("sidebarPressed:"), forControlEvents: UIControlEvents.TouchDown)
+            button.addTarget(self, action: Selector("sidebarReleased:"), forControlEvents: UIControlEvents.TouchUpInside)
+            button.addTarget(self, action: Selector("sidebarReleased:"), forControlEvents: UIControlEvents.TouchUpOutside)
+            
+            var label = CNLabel(frame: CGRectMake(0, 0, ((self.frame.size.width/5)*4), 48))
+            label.font = UIFont(name: "Roboto-Medium", size: 14)
+            //label.backgroundColor = UIColor.blueColor()
+            label.text = item
+            label.textColor = UIColor.blackColor()
+            
+            var lc = item.lowercaseString
+            var imageIcon = UIImage(named: lc)!
+            imageIcon = self.imageResize(image: imageIcon, sizeChange: CGSizeMake(22, 22))
+            var imageIconView = UIImageView(image: imageIcon)
+            imageIconView.frame = CGRectMake(16, 13, 22, 22)
+            label.addSubview(imageIconView)
+            
+            button.addSubview(label)
+
+            
+            self.contentView.addSubview(button)
+            cy += 48
+            count++
+        }
+        self.setHighlighted(0)
+    }
+    
+    func setHighlighted(position: Int) {
+        UIView.animateWithDuration(0.2, animations: {
+            for pos in 0...self.contentView.subviews.count-1 {
+                var view: UIButton = self.contentView.subviews[pos] as! UIButton
+                if pos == position {
+                    view.backgroundColor = UIColor(hex: 0xf0f0f0)
+                } else {
+                    view.backgroundColor = UIColor.whiteColor()
+                }
+            }
+        })
+    }
+    
+    func sidebarPressed(sender: UIButton) {
+        var num = sender.tag
+        self.setHighlighted(num)
+    }
+    
+    func sidebarReleased(sender: UIButton) {
+        var tag = sender.tag
+        if tag != self.selected {
+            if tag == 0 {
+                let vc : CNHomeTableViewController! = self.navBar.storyboard!.instantiateViewControllerWithIdentifier("homeVC") as! CNHomeTableViewController!
+                self.navBar.pushViewController(vc, animated: true)
+                self.shadowTapped()
+                
+            } else if tag == 1 {
+                let vc : CNAddViewController! = self.navBar.storyboard!.instantiateViewControllerWithIdentifier("meh") as! CNAddViewController!
+                self.navBar.pushViewController(vc, animated: true)
+                self.shadowTapped()
+            } else {
+                let vc : CNWebViewController! = self.navBar.storyboard!.instantiateViewControllerWithIdentifier("webView") as! CNWebViewController!
+                self.navBar.pushViewController(vc, animated: true)
+                self.shadowTapped()
+            }
+        }
+        self.selected = tag
     }
 }
