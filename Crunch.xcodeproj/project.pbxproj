@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		5191A5F81AE09DD300665118 /* CNWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5191A5F71AE09DD300665118 /* CNWebViewController.swift */; };
 		5191A5FA1AE0D76B00665118 /* CNLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5191A5F91AE0D76B00665118 /* CNLabel.swift */; };
+		519391731AE206F0005529AF /* CNSubscribedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 519391721AE206F0005529AF /* CNSubscribedViewController.swift */; };
+		519391741AE22839005529AF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 51EE20641ADB74240055E322 /* Main.storyboard */; };
 		51939BE21AE0724F00E0060C /* SOLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51939BE11AE0724F00E0060C /* SOLabel.swift */; };
 		51939BE51AE081DD00E0060C /* CNFeedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51939BE31AE081DD00E0060C /* CNFeedTableViewCell.swift */; };
 		51939BE61AE081DD00E0060C /* CNFeedTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 51939BE41AE081DD00E0060C /* CNFeedTableViewCell.xib */; };
@@ -20,7 +22,6 @@
 		51A63F311AE0652D004B7F5A /* RSSParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51A63F2C1AE0652D004B7F5A /* RSSParser.swift */; };
 		51A63F321AE0652D004B7F5A /* String+imageLinksFromHTML.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51A63F2D1AE0652D004B7F5A /* String+imageLinksFromHTML.swift */; };
 		51A63F351AE06794004B7F5A /* CNHomeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51A63F341AE06794004B7F5A /* CNHomeTableViewController.swift */; };
-		51C7457B1ADB74EE00A1AD63 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 51EE20641ADB74240055E322 /* Main.storyboard */; };
 		51C745801ADB75CE00A1AD63 /* CNNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51C7457F1ADB75CE00A1AD63 /* CNNavigationController.swift */; };
 		51C745841ADB84AC00A1AD63 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 51EE20691ADB74250055E322 /* LaunchScreen.xib */; };
 		51C745851ADB84B100A1AD63 /* Roboto-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 51C745811ADB819A00A1AD63 /* Roboto-Bold.ttf */; };
@@ -48,6 +49,7 @@
 /* Begin PBXFileReference section */
 		5191A5F71AE09DD300665118 /* CNWebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CNWebViewController.swift; sourceTree = "<group>"; };
 		5191A5F91AE0D76B00665118 /* CNLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CNLabel.swift; sourceTree = "<group>"; };
+		519391721AE206F0005529AF /* CNSubscribedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CNSubscribedViewController.swift; sourceTree = "<group>"; };
 		51939BE11AE0724F00E0060C /* SOLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SOLabel.swift; sourceTree = "<group>"; };
 		51939BE31AE081DD00E0060C /* CNFeedTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CNFeedTableViewCell.swift; sourceTree = "<group>"; };
 		51939BE41AE081DD00E0060C /* CNFeedTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CNFeedTableViewCell.xib; sourceTree = "<group>"; };
@@ -59,7 +61,6 @@
 		51A63F2C1AE0652D004B7F5A /* RSSParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RSSParser.swift; sourceTree = "<group>"; };
 		51A63F2D1AE0652D004B7F5A /* String+imageLinksFromHTML.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+imageLinksFromHTML.swift"; sourceTree = "<group>"; };
 		51A63F341AE06794004B7F5A /* CNHomeTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CNHomeTableViewController.swift; sourceTree = "<group>"; };
-		51C7457E1ADB751300A1AD63 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
 		51C7457F1ADB75CE00A1AD63 /* CNNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CNNavigationController.swift; sourceTree = "<group>"; };
 		51C745811ADB819A00A1AD63 /* Roboto-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Bold.ttf"; sourceTree = "<group>"; };
 		51C745821ADB819A00A1AD63 /* Roboto-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Light.ttf"; sourceTree = "<group>"; };
@@ -150,6 +151,7 @@
 				5191A5F91AE0D76B00665118 /* CNLabel.swift */,
 				51C7457F1ADB75CE00A1AD63 /* CNNavigationController.swift */,
 				51A363FB1ADCA84800C119BC /* CNSideBarView.swift */,
+				519391721AE206F0005529AF /* CNSubscribedViewController.swift */,
 				51E205A41AE1D963006708D9 /* CNTextField.swift */,
 				5191A5F71AE09DD300665118 /* CNWebViewController.swift */,
 				51A363FD1ADCA85A00C119BC /* Fonts */,
@@ -270,6 +272,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				519391741AE22839005529AF /* Main.storyboard in Resources */,
 				51C745891ADB850B00A1AD63 /* Roboto-Medium.ttf in Resources */,
 				51939BE61AE081DD00E0060C /* CNFeedTableViewCell.xib in Resources */,
 				51C745851ADB84B100A1AD63 /* Roboto-Bold.ttf in Resources */,
@@ -277,7 +280,6 @@
 				51C7458B1ADB8A5D00A1AD63 /* asu_pid.entitlements in Resources */,
 				51C745871ADB84B100A1AD63 /* Roboto-Regular.ttf in Resources */,
 				51C745841ADB84AC00A1AD63 /* LaunchScreen.xib in Resources */,
-				51C7457B1ADB74EE00A1AD63 /* Main.storyboard in Resources */,
 				51EE20681ADB74250055E322 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -323,6 +325,7 @@
 				51E205A31AE1D64E006708D9 /* CNAddViewController.swift in Sources */,
 				51EE20611ADB74240055E322 /* AppDelegate.swift in Sources */,
 				51A63F351AE06794004B7F5A /* CNHomeTableViewController.swift in Sources */,
+				519391731AE206F0005529AF /* CNSubscribedViewController.swift in Sources */,
 				5191A5FA1AE0D76B00665118 /* CNLabel.swift in Sources */,
 				51A63F321AE0652D004B7F5A /* String+imageLinksFromHTML.swift in Sources */,
 				51A363FF1ADCA8A200C119BC /* UIColor+Hex.swift in Sources */,
@@ -354,7 +357,6 @@
 			isa = PBXVariantGroup;
 			children = (
 				51EE20651ADB74240055E322 /* Base */,
-				51C7457E1ADB751300A1AD63 /* en */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";

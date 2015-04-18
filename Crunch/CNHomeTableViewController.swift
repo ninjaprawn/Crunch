@@ -10,29 +10,64 @@ import UIKit
 
 class CNHomeTableViewController: UITableViewController {
     
-    var blogTitle = "Today"
-    var blogItems: [RSSItem] = []
+    var blogTitles: [String?] = []
+    var blogItems: [[RSSItem]?] = []
+    
+    func numberOfSubscriptions() -> Int {
+        if let feeds: AnyObject = NSUserDefaults.standardUserDefaults().objectForKey("com.ninjaprawn.crunch/feeds") {
+            var feed: [String] = feeds as! [String]
+            var c = 0
+            for f in feed {
+                if f != "" {
+                    c++
+                }
+            }
+            return c
+        }
+        return 1
+
+    }
+    
+    func feedForIndex(pos: Int) -> String {
+        if let feeds: AnyObject = NSUserDefaults.standardUserDefaults().objectForKey("com.ninjaprawn.crunch/feeds") {
+            var feed: [String] = feeds as! [String]
+            return feed[pos]
+        }
+        return "http://blogs.microsoft.com/feed/"
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
         var nib = UINib(nibName: "CNFeedTableViewCell", bundle: nil)
         tableView.registerNib(nib, forCellReuseIdentifier: "feedCell")
-        
-        let url = NSURL(string: "http://developer.apple.com/swift/blog/news.rss")
-        
-        let request = NSURLRequest(URL: url!)
-        
-        RSSParser.parseFeedForRequest(request, callback: { (feed, error) -> Void in
-            if let error = error {
-                println(error)
-            } else {
-                self.blogItems = feed!.items!
-                self.blogTitle = feed!.title!
-            }
-            self.tableView.reloadSections(NSIndexSet(index: 0), withRowAnimation: .Automatic)
-        })
         var naviBar: CNNavigationController = self.navigationController as! CNNavigationController
+        
+        for pos in 0...self.numberOfSubscriptions()-1 {
+            var uri = feedForIndex(pos)
+            let url = NSURL(string: uri)
+            naviBar.beginRefresh()
+        
+            let request = NSURLRequest(URL: url!)
+            
+            RSSParser.parseFeedForRequest(request, callback: { (feed, error) -> Void in
+                
+                if let error = error {
+                    println(error)
+                } else {
+                    NSLog(feed!.title!)
+                    self.blogItems.append(feed!.items!)
+                    self.blogTitles.append(feed!.title!)
+                    naviBar.finishRefresh()
+                    naviBar.rightMenuButton.hidden = true
+                }
+                dispatch_async(dispatch_get_main_queue()) {
+                    self.tableView.reloadData()
+                    self.tableView.reloadSections(NSIndexSet(index: 0), withRowAnimation: .Automatic)
+                }
+                //self.tableView.reloadSections(NSIndexSet(indexesInRange: 0...self.numberOfSubscriptions()-1)), withRowAnimation: .Automatic)
+            })
+        }
         naviBar.homeVC = self as CNHomeTableViewController
         naviBar.updateNavText("Home")
         naviBar.updateLeftMenuButtonOption(LeftMenuButtonOptions.Sidebar)
@@ -41,19 +76,24 @@ class CNHomeTableViewController: UITableViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
-    
-    override func scrollViewDidScroll(scrollView: UIScrollView) {
-        
-    }
 
     // MARK: - Table view data source
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        return 1
+        return self.numberOfSubscriptions()
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        if self.blogItems.count > 0 && self.blogItems.count-1 >= section {
+            if let itms = self.blogItems[section] {
+                if itms.count > 0 {
+                    return itms.count
+                }
+                return 0
+            }
+            return 0
+        }
+        return 0
     }
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
@@ -61,7 +101,9 @@ class CNHomeTableViewController: UITableViewController {
 
         // Configure the cell...
         if self.blogItems.count > 0 {
-            cell.updateCellWith(blogItems[indexPath.row].title!, description: blogItems[indexPath.row].itemDescription!)
+            if let item = blogItems[indexPath.section] {
+                cell.updateCellWith(item[indexPath.row].title!, description: item[indexPath.row].itemDescription!)
+            }
             cell.updateImageForType(FeedType.RSS)
         }
         //println(self.blogItems)
@@ -78,11 +120,17 @@ class CNHomeTableViewController: UITableViewController {
         
         var label = SOLabel(frame: CGRectMake(16, 12, tableView.frame.size.width, 26))
         label.font = UIFont(name: "Roboto-Medium", size: 14)
-        label.text = self.blogTitle
+        if self.blogTitles.count > 0 {
+            if let obj = self.blogTitles[section] {
+                label.text = obj
+            }
+        } else {
+            label.text = ""
+        }
         label.textColor = UIColor(hex: 0x999999)
         label.verticalAlignment = .Middle
         headerView.addSubview(label)
-        
+    
         return headerView
     }
     
@@ -102,7 +150,7 @@ class CNHomeTableViewController: UITableViewController {
         //let vcs = vc.childViewControllers
         //var webvc: CNWebViewController = vcs[0] as! CNWebViewController
         if self.blogItems.count > 0 {
-            vc.link = self.blogItems[indexPath.row].link!
+            vc.link = self.blogItems[indexPath.section]![indexPath.row].link!
         } else {
             vc.link = NSURL(string: "https://twitter.com")!
         }

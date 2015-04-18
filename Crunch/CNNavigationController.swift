@@ -15,6 +15,10 @@ enum LeftMenuButtonOptions {
 
 class CNNavigationController: UINavigationController {
     
+    func nothing() {
+        //ddd
+    }
+    
     var sidebarView = CNSideBarView(frame: CGRectMake(0, -20, UIScreen.mainScreen().bounds.size.width, UIScreen.mainScreen().bounds.size.height))
     var statusBG: UIView = UIView()
     var extended: UIView = UIView()
@@ -23,6 +27,10 @@ class CNNavigationController: UINavigationController {
     var leftMenuButtonIcon: UIImageView = UIImageView()
     var leftMenuButtonOption: LeftMenuButtonOptions = .Sidebar
     var homeVC: CNHomeTableViewController = CNHomeTableViewController()
+    var rightMenuButton: UIButton = UIButton()
+    var rightMenuButtonIcon: UIImageView = UIImageView()
+    var rightMenuButtonRefresh: UIActivityIndicatorView = UIActivityIndicatorView()
+    
     
     func imageResize (#image:UIImage, sizeChange:CGSize)-> UIImage{
         
@@ -81,14 +89,61 @@ class CNNavigationController: UINavigationController {
         leftMenuButton.addTarget(self, action: Selector("menuReleased:"), forControlEvents: UIControlEvents.TouchUpOutside)
         self.navigationBar.addSubview(leftMenuButton)
         
+        rightMenuButton = UIButton(frame: CGRectMake(self.navigationBar.frame.size.width-54, ((self.navigationBar.frame.size.height+12)/2)-26, 52, 52))
+        var doneMenuImage = UIImage(named: "done")!
+        doneMenuImage = self.imageResize(image: doneMenuImage, sizeChange: CGSizeMake(24, 24))
+        rightMenuButtonIcon = UIImageView(image: doneMenuImage)
+        rightMenuButtonIcon.frame = CGRectMake(14, 14, 24, 24)
+        rightMenuButton.addSubview(rightMenuButtonIcon)
+        rightMenuButtonRefresh.hidden = true
+        rightMenuButtonRefresh.frame = CGRectMake(14,14,24,24)
+        rightMenuButton.addSubview(rightMenuButtonRefresh)
+        //menuButton.setImage(menuImage, forState: .Normal)
+        //menuButton.backgroundColor = UIColor(hex: 0x000000)
+        rightMenuButton.addTarget(self, action: Selector("donePressed:"), forControlEvents: UIControlEvents.TouchDown)
+        rightMenuButton.addTarget(self, action: Selector("doneReleased:"), forControlEvents: UIControlEvents.TouchUpInside)
+        rightMenuButton.addTarget(self, action: Selector("doneReleased:"), forControlEvents: UIControlEvents.TouchUpOutside)
+        self.navigationBar.addSubview(rightMenuButton)
+        rightMenuButton.hidden = true
+
+        
         sidebarView.hidden = true
         sidebarView.layer.shadowColor = UIColor.blackColor().CGColor
         sidebarView.layer.shadowOffset = CGSize(width: 3, height: 0)
         sidebarView.layer.shadowOpacity = 0.16
         sidebarView.layer.shadowRadius = 3
-        sidebarView.navBar = self as CNNavigationController
+        sidebarView.navBar = self
         
         self.navigationBar.barTintColor = UIColor(hex: 0x4CAF50)
+    }
+    
+    func beginRefresh() {
+        rightMenuButton.hidden = false
+        rightMenuButtonIcon.hidden = true
+        rightMenuButtonRefresh.hidden = false
+        rightMenuButtonRefresh.startAnimating()
+    }
+    
+    func finishRefresh() {
+        rightMenuButton.hidden = true
+        rightMenuButtonIcon.hidden = false
+        rightMenuButtonRefresh.hidden = true
+        rightMenuButtonRefresh.stopAnimating()
+    }
+    
+    func donePressed(sender:UIButton!) {
+        sender.layer.cornerRadius = 26.0
+        UIView.animateWithDuration(0.1, animations: {
+            sender.backgroundColor = UIColor(hex: 0x6BB6A)
+        })
+    }
+    
+    func doneReleased(sender:UIButton) {
+        UIView.animateWithDuration(0.1, animations: {
+            sender.backgroundColor = UIColor(hex: 0x4CAF50)
+        }, completion: { (succ) in
+            sender.layer.cornerRadius = 0.0
+        })
     }
     
     func menuPressed(sender:UIButton!) {

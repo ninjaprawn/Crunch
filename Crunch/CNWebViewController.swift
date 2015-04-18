@@ -18,7 +18,7 @@ public extension NSObject{
     }
 }
 
-class CNWebViewController: UIViewController, UIGestureRecognizerDelegate {
+class CNWebViewController: UIViewController, UIGestureRecognizerDelegate, UIWebViewDelegate {
 
     @IBOutlet weak var webView: UIWebView!
     var link: NSURL = NSURL(string: "http://google.com")!
@@ -35,11 +35,22 @@ class CNWebViewController: UIViewController, UIGestureRecognizerDelegate {
         }
         // Do any additional setup after loading the view.
         webView.loadRequest(NSURLRequest(URL: self.link))
+        webView.delegate = self
     }
         
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    func webViewDidStartLoad(webView: UIWebView) {
+        var navBar = self.navigationController as! CNNavigationController
+        navBar.beginRefresh()
+    }
+    
+    func webViewDidFinishLoad(webView: UIWebView) {
+        var navBar = self.navigationController as! CNNavigationController
+        navBar.finishRefresh()
     }
     
 

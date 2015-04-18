@@ -136,17 +136,35 @@ class CNSideBarView: UIWindow, UIGestureRecognizerDelegate {
         var tag = sender.tag
         if tag != self.selected {
             if tag == 0 {
-                let vc : CNHomeTableViewController! = self.navBar.storyboard!.instantiateViewControllerWithIdentifier("homeVC") as! CNHomeTableViewController!
-                self.navBar.pushViewController(vc, animated: true)
-                self.shadowTapped()
-                
+                var nav = navBar as! CNNavigationController
+                nav.popViewControllerAnimated(true)
+                /*let vc : CNHomeTableViewController! = self.navBar.storyboard!.instantiateViewControllerWithIdentifier("homeVC") as! CNHomeTableViewController!
+                self.navBar.pushViewController(vc, animated: true)*/
+                nav.updateNavText("Home")
+                nav.rightMenuButton.hidden = true
+                self.shadowTapped()                
             } else if tag == 1 {
-                let vc : CNAddViewController! = self.navBar.storyboard!.instantiateViewControllerWithIdentifier("meh") as! CNAddViewController!
+                var nav = navBar as! CNNavigationController
+                nav.popViewControllerAnimated(true)
+                let vc : CNAddViewController! = self.navBar.storyboard!.instantiateViewControllerWithIdentifier("subscribeVC") as! CNAddViewController!
                 self.navBar.pushViewController(vc, animated: true)
+                nav.updateNavText("Subscribe")
+                self.shadowTapped()
+            } else if tag == 2 {
+                var nav = navBar as! CNNavigationController
+                nav.popViewControllerAnimated(true)
+                let vc : CNSubscribedViewController! = self.navBar.storyboard!.instantiateViewControllerWithIdentifier("subscribedVC") as! CNSubscribedViewController!
+                self.navBar.pushViewController(vc, animated: true)
+                nav.updateNavText("Subscribed")
+                nav.rightMenuButton.hidden = true
                 self.shadowTapped()
             } else {
-                let vc : CNWebViewController! = self.navBar.storyboard!.instantiateViewControllerWithIdentifier("webView") as! CNWebViewController!
+                var nav = navBar as! CNNavigationController
+                nav.popViewControllerAnimated(true)
+                let vc : CNSubscribedViewController! = self.navBar.storyboard!.instantiateViewControllerWithIdentifier("subscribedVC") as! CNSubscribedViewController!
                 self.navBar.pushViewController(vc, animated: true)
+                nav.updateNavText("Favourites")
+                nav.rightMenuButton.hidden = true
                 self.shadowTapped()
             }
         }

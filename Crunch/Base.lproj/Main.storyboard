@@ -3,6 +3,18 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7520"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <mutableArray key="Roboto-Medium.ttf">
+            <string>Roboto-Medium</string>
+            <string>Roboto-Medium</string>
+        </mutableArray>
+        <mutableArray key="Roboto-Regular.ttf">
+            <string>Roboto-Regular</string>
+            <string>Roboto-Regular</string>
+            <string>Roboto-Regular</string>
+            <string>Roboto-Regular</string>
+        </mutableArray>
+    </customFonts>
     <scenes>
         <!--Navigation Controller-->
         <scene sceneID="cTM-Yb-tof">
@@ -40,20 +52,6 @@
                                 </tableViewCellContentView>
                                 <color key="backgroundColor" red="0.98039215686274506" green="0.98039215686274506" blue="0.98039215686274506" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </tableViewCell>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="aQM-cO-BEr">
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="aQM-cO-BEr" id="4qn-hQ-h1X">
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                                <color key="backgroundColor" red="0.98039215690000003" green="0.98039215690000003" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            </tableViewCell>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="ZHJ-gW-git">
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ZHJ-gW-git" id="Q4r-2b-dVF">
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                                <color key="backgroundColor" red="0.98039215690000003" green="0.98039215690000003" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            </tableViewCell>
                         </prototypes>
                         <sections/>
                         <connections>
@@ -70,7 +68,7 @@
         <!--Add View Controller-->
         <scene sceneID="oTH-8m-gbO">
             <objects>
-                <viewController storyboardIdentifier="meh" id="2vf-fF-9x3" customClass="CNAddViewController" customModule="Crunch" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="subscribeVC" id="2vf-fF-9x3" customClass="CNAddViewController" customModule="Crunch" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="F79-D5-W1q"/>
                         <viewControllerLayoutGuide type="bottom" id="pn3-1o-eWK"/>
@@ -79,14 +77,55 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="http://blogs.microsoft.com/feed/" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="TFy-z2-K6y" customClass="CNTextField" customModule="Crunch" customModuleProvider="target">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="http://blogs.microsoft.com/feed/" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="TFy-z2-K6y" customClass="CNTextField" customModule="Crunch" customModuleProvider="target">
                                 <rect key="frame" x="56" y="34" width="248" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="15"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ln2-7c-i1m">
+                                <rect key="frame" x="16" y="37" width="24" height="24"/>
+                            </imageView>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="HSHACT" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="RCo-1l-CJA" customClass="CNTextField" customModule="Crunch" customModuleProvider="target">
+                                <rect key="frame" x="56" y="92" width="248" height="30"/>
+                                <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="15"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="#" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ia2-Ae-vqo">
+                                <rect key="frame" x="16" y="95" width="24" height="24"/>
+                                <fontDescription key="fontDescription" name="Roboto-Medium" family="Roboto" pointSize="18"/>
+                                <color key="textColor" red="0.45882352939999999" green="0.45882352939999999" blue="0.45882352939999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="hact_io" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wHe-6w-RIe" customClass="CNTextField" customModule="Crunch" customModuleProvider="target">
+                                <rect key="frame" x="56" y="151" width="248" height="30"/>
+                                <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="15"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="@" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Px2-JY-rmE">
+                                <rect key="frame" x="16" y="154" width="24" height="24"/>
+                                <fontDescription key="fontDescription" name="Roboto-Medium" family="Roboto" pointSize="18"/>
+                                <color key="textColor" red="0.45882352941176469" green="0.45882352941176469" blue="0.45882352941176469" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Microsoft" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="V0o-OH-h1Y" customClass="CNTextField" customModule="Crunch" customModuleProvider="target">
+                                <rect key="frame" x="56" y="217" width="248" height="30"/>
+                                <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="15"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ra9-fC-Lno">
+                                <rect key="frame" x="16" y="220" width="24" height="24"/>
+                            </imageView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.91764705882352937" green="0.91764705882352937" blue="0.91764705882352937" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
+                    <connections>
+                        <outlet property="atTextField" destination="wHe-6w-RIe" id="X6N-VS-U9P"/>
+                        <outlet property="hashtagTextField" destination="RCo-1l-CJA" id="NkJ-zw-BSU"/>
+                        <outlet property="imageView" destination="Ln2-7c-i1m" id="Rad-pI-ccU"/>
+                        <outlet property="instaImageView" destination="ra9-fC-Lno" id="RL4-Lj-pTX"/>
+                        <outlet property="instaTextField" destination="V0o-OH-h1Y" id="vRA-fo-46V"/>
+                        <outlet property="rssTextField" destination="TFy-z2-K6y" id="Oq7-pU-d1d"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CK8-4A-4Lp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -119,6 +158,35 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5EP-7x-h94" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="408" y="958"/>
+        </scene>
+        <!--Subscribed View Controller-->
+        <scene sceneID="Fgb-eO-0bI">
+            <objects>
+                <tableViewController storyboardIdentifier="subscribedVC" id="NfW-24-4HM" customClass="CNSubscribedViewController" customModule="Crunch" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="x16-Y2-dyT">
+                        <rect key="frame" x="0.0" y="64" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="0.91764705879999997" green="0.91764705879999997" blue="0.91764705879999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="reuseIdentifier" id="Wds-Nw-fJ0">
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Wds-Nw-fJ0" id="dBR-03-IHj">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                                <color key="backgroundColor" red="0.98039215690000003" green="0.98039215690000003" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </tableViewCell>
+                        </prototypes>
+                        <sections/>
+                        <connections>
+                            <outlet property="dataSource" destination="NfW-24-4HM" id="tOb-y3-5SH"/>
+                            <outlet property="delegate" destination="NfW-24-4HM" id="AVo-vJ-ZSf"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="7cg-zh-Gl4"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7pD-6t-H2f" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-79" y="1637"/>
         </scene>
     </scenes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
