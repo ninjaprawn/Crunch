@@ -142,6 +142,8 @@ class CNSideBarView: UIWindow, UIGestureRecognizerDelegate {
                 self.navBar.pushViewController(vc, animated: true)*/
                 nav.updateNavText("Home")
                 nav.rightMenuButton.hidden = true
+                var home = nav.childViewControllers[0] as! CNHomeTableViewController
+                home.viewDidLoad()
                 self.shadowTapped()                
             } else if tag == 1 {
                 var nav = navBar as! CNNavigationController
@@ -161,7 +163,7 @@ class CNSideBarView: UIWindow, UIGestureRecognizerDelegate {
             } else {
                 var nav = navBar as! CNNavigationController
                 nav.popViewControllerAnimated(true)
-                let vc : CNSubscribedViewController! = self.navBar.storyboard!.instantiateViewControllerWithIdentifier("subscribedVC") as! CNSubscribedViewController!
+                let vc : CNFavouritesTableViewController! = self.navBar.storyboard!.instantiateViewControllerWithIdentifier("favouritesVC") as! CNFavouritesTableViewController!
                 self.navBar.pushViewController(vc, animated: true)
                 nav.updateNavText("Favourites")
                 nav.rightMenuButton.hidden = true

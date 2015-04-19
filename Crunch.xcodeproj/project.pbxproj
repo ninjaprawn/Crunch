@@ -11,6 +11,7 @@
 		5191A5FA1AE0D76B00665118 /* CNLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5191A5F91AE0D76B00665118 /* CNLabel.swift */; };
 		519391731AE206F0005529AF /* CNSubscribedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 519391721AE206F0005529AF /* CNSubscribedViewController.swift */; };
 		519391741AE22839005529AF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 51EE20641ADB74240055E322 /* Main.storyboard */; };
+		519391761AE32FFB005529AF /* CNFavouritesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 519391751AE32FFB005529AF /* CNFavouritesTableViewController.swift */; };
 		51939BE21AE0724F00E0060C /* SOLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51939BE11AE0724F00E0060C /* SOLabel.swift */; };
 		51939BE51AE081DD00E0060C /* CNFeedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51939BE31AE081DD00E0060C /* CNFeedTableViewCell.swift */; };
 		51939BE61AE081DD00E0060C /* CNFeedTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 51939BE41AE081DD00E0060C /* CNFeedTableViewCell.xib */; };
@@ -50,6 +51,7 @@
 		5191A5F71AE09DD300665118 /* CNWebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CNWebViewController.swift; sourceTree = "<group>"; };
 		5191A5F91AE0D76B00665118 /* CNLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CNLabel.swift; sourceTree = "<group>"; };
 		519391721AE206F0005529AF /* CNSubscribedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CNSubscribedViewController.swift; sourceTree = "<group>"; };
+		519391751AE32FFB005529AF /* CNFavouritesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CNFavouritesTableViewController.swift; sourceTree = "<group>"; };
 		51939BE11AE0724F00E0060C /* SOLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SOLabel.swift; sourceTree = "<group>"; };
 		51939BE31AE081DD00E0060C /* CNFeedTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CNFeedTableViewCell.swift; sourceTree = "<group>"; };
 		51939BE41AE081DD00E0060C /* CNFeedTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CNFeedTableViewCell.xib; sourceTree = "<group>"; };
@@ -145,6 +147,7 @@
 				51EE20601ADB74240055E322 /* AppDelegate.swift */,
 				51C7458A1ADB8A5D00A1AD63 /* asu_pid.entitlements */,
 				51E205A21AE1D64E006708D9 /* CNAddViewController.swift */,
+				519391751AE32FFB005529AF /* CNFavouritesTableViewController.swift */,
 				51939BE31AE081DD00E0060C /* CNFeedTableViewCell.swift */,
 				51939BE41AE081DD00E0060C /* CNFeedTableViewCell.xib */,
 				51A63F341AE06794004B7F5A /* CNHomeTableViewController.swift */,
@@ -328,6 +331,7 @@
 				519391731AE206F0005529AF /* CNSubscribedViewController.swift in Sources */,
 				5191A5FA1AE0D76B00665118 /* CNLabel.swift in Sources */,
 				51A63F321AE0652D004B7F5A /* String+imageLinksFromHTML.swift in Sources */,
+				519391761AE32FFB005529AF /* CNFavouritesTableViewController.swift in Sources */,
 				51A363FF1ADCA8A200C119BC /* UIColor+Hex.swift in Sources */,
 				51939BE51AE081DD00E0060C /* CNFeedTableViewCell.swift in Sources */,
 				51A63F301AE0652D004B7F5A /* RSSItem.swift in Sources */,

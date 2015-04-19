@@ -188,6 +188,24 @@
             </objects>
             <point key="canvasLocation" x="-79" y="1637"/>
         </scene>
+        <!--Favourites Table View Controller-->
+        <scene sceneID="hI2-A3-XYX">
+            <objects>
+                <tableViewController storyboardIdentifier="favouritesVC" id="gLk-qF-rkL" customClass="CNFavouritesTableViewController" customModule="Crunch" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="Nf6-eg-cKf">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <connections>
+                            <outlet property="dataSource" destination="gLk-qF-rkL" id="ZsQ-3m-ZXk"/>
+                            <outlet property="delegate" destination="gLk-qF-rkL" id="9gW-At-f0f"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="GYf-rc-ZUC" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="408" y="1637"/>
+        </scene>
     </scenes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>

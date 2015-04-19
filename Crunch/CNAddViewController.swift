@@ -68,14 +68,16 @@ class CNAddViewController: UIViewController, UIGestureRecognizerDelegate {
             sender.backgroundColor = UIColor(hex: 0x4CAF50)
         }, completion: { (succ) in
             sender.layer.cornerRadius = 0.0
-            if let url = NSURL(string: self.rssTextField.text) {
-                if self.rssTextField.text != "" {
-                    self.addFeed(self.rssTextField.text)
-                    /*var navbar = self.navigationController as! CNNavigationController
-                    navbar.popViewControllerAnimated(true)
-                    navbar.rightMenuButton.hidden = true
-                    navbar.sidebarView.setHighlighted(0)
-                    navbar.sidebarView.selected = 0*/
+            if let str = self.rssTextField.text {
+                if let url = NSURL(string: self.rssTextField.text) {
+                    if self.rssTextField.text != "" {
+                        //self.addFeed(self.rssTextField.text)
+                        /*var navbar = self.navigationController as! CNNavigationController
+                        navbar.popViewControllerAnimated(true)
+                        navbar.rightMenuButton.hidden = true
+                        navbar.sidebarView.setHighlighted(0)
+                        navbar.sidebarView.selected = 0*/
+                    }
                 }
             }
         })

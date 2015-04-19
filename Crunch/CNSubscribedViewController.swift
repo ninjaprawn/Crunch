@@ -35,6 +35,13 @@ class CNSubscribedViewController: UITableViewController {
         return 1
     }
     
+    func removeSubscription(pos: Int) {
+        var feeds: [String] = NSUserDefaults.standardUserDefaults().objectForKey("com.ninjaprawn.crunch/feeds") as! [String]
+        feeds.removeAtIndex(pos)
+        NSUserDefaults.standardUserDefaults().setObject(feeds, forKey: "com.ninjaprawn.crunch/feeds")
+        NSUserDefaults.standardUserDefaults().synchronize()
+    }
+    
     func feedForIndex(pos: Int) -> String {
         if let feeds: AnyObject = NSUserDefaults.standardUserDefaults().objectForKey("com.ninjaprawn.crunch/feeds") {
             var feed: [String] = feeds as! [String]
@@ -51,21 +58,29 @@ class CNSubscribedViewController: UITableViewController {
     // MARK: TableView DataSource
     
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        return 3
+        return 4
     }
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if section == 0 {
             return numberOfSubscriptions()
         }
-        return 0
+        return 1
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath) as! UITableViewCell
         
-        cell.textLabel?.text = self.feedForIndex(indexPath.row)
         cell.textLabel?.font = UIFont(name: "Roboto-Regular", size: 16)
+        if indexPath.section == 0 {
+            cell.textLabel?.text = self.feedForIndex(indexPath.row)
+        } else if indexPath.section == 1 {
+            cell.textLabel?.text = "#HSHACT"
+        } else if indexPath.section == 2 {
+            cell.textLabel?.text = "George Dan (ninja) - @theninjaprawn"
+        } else if indexPath.section == 3 {
+            cell.textLabel?.text = "Microsoft - @microsoft"
+        }
         
         return cell
     }
@@ -85,6 +100,8 @@ class CNSubscribedViewController: UITableViewController {
             label.text = "Hashtags"
         } else if section == 2 {
             label.text = "Accounts"
+        } else if section == 3 {
+            label.text = "Instagram"
         }
         label.textColor = UIColor(hex: 0x999999)
         label.verticalAlignment = .Middle
@@ -95,6 +112,18 @@ class CNSubscribedViewController: UITableViewController {
     
     override func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return 38
+    }
+    
+    override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
+        return true
+    }
+    
+    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+        if (editingStyle == UITableViewCellEditingStyle.Delete) {
+            // handle delete (by removing the data from your array and updating the tableview)
+            self.removeSubscription(indexPath.row)
+            tableView.reloadSections(NSIndexSet(index: 0), withRowAnimation: .Automatic)
+        }
     }
     
 

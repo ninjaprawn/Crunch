@@ -115,6 +115,7 @@ class CNNavigationController: UINavigationController {
         sidebarView.navBar = self
         
         self.navigationBar.barTintColor = UIColor(hex: 0x4CAF50)
+        self.navigationBar.tintColor = UIColor(hex: 0x4CAF50)
     }
     
     func beginRefresh() {
